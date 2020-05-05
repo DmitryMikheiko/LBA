@@ -44,7 +44,7 @@ namespace LED_Board_Access
         }
         private Theme CreateTheme()
         {
-            ThemeCreator themeCreator = new ThemeCreator();
+            ThemeCreator themeCreator = new ThemeCreator(solution.GetProject());
             themeCreator.Show(tabControl_Main);
             themeCreator.ThemeChanged += new EventHandler(ThemeChanged);
             themeCreator.ThemeNameChanged += new EventHandler(ThemeNameChanged);
@@ -99,7 +99,7 @@ namespace LED_Board_Access
             if (newProjectDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 Project project = new Project();
-                project.Board = newProjectDialog.GetBoard();
+                project.SetBoardType(newProjectDialog.GetBoard());
                 project.ProjectName = newProjectDialog.GetName();
                 solution.AddItem(project);
                 Document document = solution.GetItemDocument(project);

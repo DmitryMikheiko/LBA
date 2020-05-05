@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Drawing;
 
 namespace LED_Board_Access
 {
@@ -19,13 +20,16 @@ namespace LED_Board_Access
 
         private List<string> project_directories;
         public TaskScheduler taskScheduler;
-     public enum BoardType
-     {
-         V1_23x23,
-         V2_24x24
-     }
-     public BoardType Board;
-     public string ProjectName;
+        public enum BoardType
+        {
+            LSB_24x24,
+            LSB_53x28
+        }
+        private BoardType boardType;
+        private Size boardSize;
+
+     
+        public string ProjectName;
      public Project()
      {
          documents = new List<string>();
@@ -35,7 +39,8 @@ namespace LED_Board_Access
         // project_directories.Add(ImagesDirectory);
         // project_directories.Add(OtherFilesDirectory);
          taskScheduler = new TaskScheduler(this);
-     }
+         boardSize = new Size(0, 0);
+        }
      public TaskScheduler GetTaskScheduler()
      {
          return taskScheduler;
@@ -104,5 +109,33 @@ namespace LED_Board_Access
      {
          ProjectName = name;
      }
+        public void SetBoardType(BoardType type)
+        {
+            boardType = type;
+            switch (boardType)
+            {
+                case BoardType.LSB_24x24:
+                    boardSize.Width = 24;
+                    boardSize.Height = 24;
+                    break;
+                case BoardType.LSB_53x28:
+                    boardSize.Width = 53;
+                    boardSize.Height = 28;
+                    break;
+                default:
+                    boardSize.Width = 10;
+                    boardSize.Height = 10;
+                    break;
+            }
+        }
+        public BoardType GetBoardType()
+        {         
+            return boardType;
+        }
+
+        public Size GetBoardSize()
+        {
+            return new Size(boardSize.Width, boardSize.Height);
+        }
     }
 }

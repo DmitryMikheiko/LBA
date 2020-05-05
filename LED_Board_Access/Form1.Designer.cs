@@ -113,7 +113,7 @@
             this.hELPToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(98, 525);
+            this.menuStrip1.Size = new System.Drawing.Size(73, 525);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -136,7 +136,7 @@
             this.toolStripSeparator5,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(85, 19);
+            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(60, 19);
             this.fileToolStripMenuItem1.Text = "FILE";
             // 
             // newToolStripMenuItem
@@ -275,7 +275,7 @@
             this.toolStripSeparator8,
             this.uploadToLEDBoardToolStripMenuItem});
             this.projectToolStripMenuItem2.Name = "projectToolStripMenuItem2";
-            this.projectToolStripMenuItem2.Size = new System.Drawing.Size(85, 19);
+            this.projectToolStripMenuItem2.Size = new System.Drawing.Size(60, 19);
             this.projectToolStripMenuItem2.Text = "PROJECT";
             // 
             // addThemeToolStripMenuItem
@@ -325,13 +325,13 @@
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionsToolStripMenuItem1});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(85, 19);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(60, 19);
             this.optionsToolStripMenuItem.Text = "TOOLS";
             // 
             // optionsToolStripMenuItem1
             // 
             this.optionsToolStripMenuItem1.Name = "optionsToolStripMenuItem1";
-            this.optionsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.optionsToolStripMenuItem1.Text = "Options";
             // 
             // hELPToolStripMenuItem
@@ -339,22 +339,22 @@
             this.hELPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.supportToolStripMenuItem});
             this.hELPToolStripMenuItem.Name = "hELPToolStripMenuItem";
-            this.hELPToolStripMenuItem.Size = new System.Drawing.Size(85, 19);
+            this.hELPToolStripMenuItem.Size = new System.Drawing.Size(60, 19);
             this.hELPToolStripMenuItem.Text = "HELP";
             // 
             // supportToolStripMenuItem
             // 
             this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
-            this.supportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.supportToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.supportToolStripMenuItem.Text = "Support";
             this.supportToolStripMenuItem.Click += new System.EventHandler(this.supportToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(67)))), ((int)(((byte)(98)))));
-            this.statusStrip1.Location = new System.Drawing.Point(98, 503);
+            this.statusStrip1.Location = new System.Drawing.Point(73, 503);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(898, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(923, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -364,7 +364,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl_Main.Location = new System.Drawing.Point(-2, 0);
+            this.tabControl_Main.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl_Main.Name = "tabControl_Main";
+            this.tabControl_Main.Padding = new System.Drawing.Point(0, 0);
             this.tabControl_Main.SelectedIndex = 0;
             this.tabControl_Main.Size = new System.Drawing.Size(638, 503);
             this.tabControl_Main.TabIndex = 0;

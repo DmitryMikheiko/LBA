@@ -24,7 +24,7 @@ namespace LED_Board_Access
         {
             InitializeComponent();
             comboBox_BoardVersion.Items.AddRange(Enum.GetNames(typeof(Project.BoardType)));
-            comboBox_BoardVersion.SelectedItem = Project.BoardType.V2_24x24;
+            comboBox_BoardVersion.SelectedItem = Project.BoardType.LSB_24x24;
         }
 
         private void button_OK_Click(object sender, EventArgs e)

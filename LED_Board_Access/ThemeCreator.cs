@@ -23,8 +23,7 @@ namespace LED_Board_Access
         Theme theme;
         private int DotSize = 12;
         private int DotSpace = 1;
-        private int SizeX = 24;
-        private int SizeY = 24;
+        private Size BoardSize = new Size(10, 10);
         private Point MatrixPosition = new Point(10, 10);
         private Point SelectedPixel = new Point(-1, -1);
         private Point MouseOnPixel = new Point(-1, -1);
@@ -50,10 +49,11 @@ namespace LED_Board_Access
             Animation
         }
 
-        public ThemeCreator ()
+        public ThemeCreator (Project project)
         {
             theme = new Theme();
             theme.Name = "NewTheme";
+            theme.project = project;
             ThemeCreatorInit();
         }
         public ThemeCreator(Theme theme)
@@ -73,6 +73,12 @@ namespace LED_Board_Access
         {
             Control = new ThemeCreatorControl();
             tabPage = new TabPage();
+            if (theme.project != null && !theme.project.GetBoardSize().Equals(new Size(0,0)))
+            {
+                BoardSize = theme.project.GetBoardSize();
+            }
+            Control.PictureBox.Size = new Size(BoardSize.Width * (DotSize + DotSpace) - DotSpace + MatrixPosition.X * 2,
+                                                BoardSize.Height * (DotSize + DotSpace) - DotSpace + MatrixPosition.Y * 2);
           //  tabPage.Location = new System.Drawing.Point(0, 0);
             tabPage.Name = "ThemeCreator";
             tabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -83,13 +89,17 @@ namespace LED_Board_Access
            // this.tabPage.Size = new System.Drawing.Size(991, 682);
             tabPage.UseVisualStyleBackColor = true;
             Control.Anchor = AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom;
+
+            tabPage.Size = new Size(Control.Size.Width, Control.Size.Height);
+   
+
             tabPage.Controls.Add(Control);
 
-           // this.Control.Location = new System.Drawing.Point(6, 6);
-           // this.Control.Size = new System.Drawing.Size(959, 668);
-            
+            // this.Control.Location = new System.Drawing.Point(6, 6);
+            // this.Control.Size = new System.Drawing.Size(959, 668);
 
-            BoardImage = new Bitmap(SizeX, SizeY);
+
+            BoardImage = new Bitmap(BoardSize.Width, BoardSize.Height);
 
             Control.PictureBox.Paint += new PaintEventHandler(PictureBox_Paint);
             Control.button_Animation.Click += new EventHandler(Toolbox_Animation_click);
@@ -106,6 +116,7 @@ namespace LED_Board_Access
            
 
             pictureBoxToolTip.Visible = false;
+
             Control.PictureBox.Controls.Add(pictureBoxToolTip);
 
             DisplayThread = new Thread(new ThreadStart(DisplayProcc));
@@ -327,8 +338,8 @@ namespace LED_Board_Access
             Point p2 = new Point(-1, -1);
             if (p.X > 0 && p.Y > 0)
             {
-                for (x = 0; x < SizeX; x++)
-                    for (y = 0; y < SizeY; y++)
+                for (x = 0; x < BoardSize.Width; x++)
+                    for (y = 0; y < BoardSize.Height; y++)
                     {
                         if (p.X >= (x * (DotSpace + DotSize)) && p.X < (x * (DotSpace + DotSize) + DotSize))
                         {
@@ -383,7 +394,7 @@ namespace LED_Board_Access
         }
         private Bitmap GetBitmap()
         {
-            Bitmap bitmap = new Bitmap(SizeX, SizeY);
+            Bitmap bitmap = new Bitmap(BoardSize.Width, BoardSize.Height);
             ClearBitmap(bitmap, theme.BackColor);
    
             foreach(object tool in theme.GetTools())

@@ -20,6 +20,7 @@ namespace LED_Board_Access
 
         public const string Extension = ".lbt";
         public const string ExtensionName = "LED Board Theme";
+        public Project project;
 
         public List<LB_Tools_Interface> Tools;
 
