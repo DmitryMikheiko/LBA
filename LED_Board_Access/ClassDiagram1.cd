@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LED_Board_Access.About" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAAAIAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>About.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.AboutBox1" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kIAAAAgAACAgCAUAAACAAAADAAAAEIAAAAAAAAAAAAA=</HashCode>
+      <FileName>AboutBox1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.AddTaskDialog" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJgSCAAAGAAQBEAAACAgAAGAICYAAgAAOAIAgLAAEA=</HashCode>
+      <FileName>AddTaskDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.AppAppearance" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQgAAAQAAAgAAAAAAAAAAAAAAEAAIAAAAAA=</HashCode>
+      <FileName>AppAppearance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.Document" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAEAABAQIAAgAAAwCIACAEgDAAAAAhAA=</HashCode>
+      <FileName>Document.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.Form1" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>XRiMIv3MICAySBBKACyowBGCAGhECQsg0gCKrUCACOU=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.LB_Task" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAQAAQAARAAAAAAIABAAAACAAgAAAAAAAEAAABAEgA=</HashCode>
+      <FileName>LB_Task.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.LB_Tools" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>LB_Tools.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.LB_Tools_Animation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAhEAAgAACAAQgiAAIQAIAAIEEACCgAAAkAAVAAgAAA=</HashCode>
+      <FileName>LB_Tools_Animation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LED_Board_Access.LB_Tools_Clock" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAgEAIgBAGCAAACAIIQAIAAAQEAQCgAAAAEAWAABABA=</HashCode>
+      <FileName>LB_Tools_Clock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LED_Board_Access.LB_Tools_Image" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgEAAgAACAIQAiAAMQAIIAIAEICCiAAA4AAUABAAAA=</HashCode>
+      <FileName>LB_Tools_Image.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LED_Board_Access.LB_Tools_RunningText" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQoEAIgAACCCACCAAIQAIAQZQEAAKwAJAAEAWQEBAAI=</HashCode>
+      <FileName>LB_Tools_RunningText.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LED_Board_Access.LB_Tools_Text" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAoEAIgAACCCACCAAISAIBQAQEAAKgAIAAEQWAAhAAA=</HashCode>
+      <FileName>LB_Tools_Text.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LED_Board_Access.LB_Tools_TimeSecProgressBar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgkADgAAGAAAACAAIQAIAAIgEAACgSAAQECUAKAAAA=</HashCode>
+      <FileName>LB_Tools_TimeSecProgressBar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LED_Board_Access.LED_Board_Manager" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQIYAgAELABAJIEAECBAIYCLAISIACAAmAIxACAAQw=</HashCode>
+      <FileName>LED_Board_Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.NewProjectDialog" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAgQAAiCAgABAAAACCEQADAAACBEAAAAAUAYAAhAA=</HashCode>
+      <FileName>NewProjectDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.Program" Collapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.Project" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIkAAAAAAAAAgAAgCAAAAQAEAAIEAQQBgEBAAiAAxAA=</HashCode>
+      <FileName>Project.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LED_Board_Access.ProjectTreeBuilder" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAgAAAAAAAEIAAAQAAAAAgAACAAAA=</HashCode>
+      <FileName>ProjectTreeBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.Solution" Collapsed="true">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQhCAAASAkARQQEBgAAgAQAAoAIAIAQEAigEGAAABAY=</HashCode>
+      <FileName>Solution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.ToolsConverter" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAACAAAAAAAAAA=</HashCode>
+      <FileName>Solution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.JsonCreationConverter&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQQAAAAAEAAAAAAAAAAAAEAAAAAAAAAACAA=</HashCode>
+      <FileName>Solution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.StringToBitmapConverter" Collapsed="true">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACICAAABAAAAAAAAACAAAAAABAAAAAAA=</HashCode>
+      <FileName>StringToBitmapConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.TaskCardUserControl" Collapsed="true">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAwAAABGAAQFAAAACAAQAGBCAAAAAAAgQAAABAAAE=</HashCode>
+      <FileName>TaskCardUserControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.TaskScheduler" Collapsed="true">
+    <Position X="8.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgDAACAAAAAQAAAgICgAAAABgBgEAAAAAAAAAACAEAA=</HashCode>
+      <FileName>TaskScheduler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.TaskSchedulerUserControl" Collapsed="true">
+    <Position X="10" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AWACAAAIgiAACAAACICGAgACAAAgAIGAACAAQICAAQI=</HashCode>
+      <FileName>TaskSchedulerUserControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.Theme" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEAAAgQAAQRAAAAEAAAAQQAAEAEAUABQAMAAAABhAE=</HashCode>
+      <FileName>Theme.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LED_Board_Access.ThemeCreator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIJQQAIEADAAhAAAKAQQAhKBEEgECISAgElAgBhAHBQ=</HashCode>
+      <FileName>ThemeCreator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LED_Board_Access.ThemeCreatorControl" Collapsed="true">
+    <Position X="4.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAgAAACAACAAAAACAQAICAAAEAAAwAgAAAAAAggA=</HashCode>
+      <FileName>ThemeCreatorControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VisualEffectsConverter.AnimationConverter" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCQAAAAAGBAAAAAABgAAIMAAAABEEAAIAAAQAAAAgA=</HashCode>
+      <FileName>AnimationConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ESP8266_Programmer_ForStm32.ESP8266_CommunicationProtocol" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aYKDkSVIYJJRu0FdhOIhJRQmJGAEKrBhESOQGy5eEiQ=</HashCode>
+      <FileName>ESP8266_CommunicationProtocol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SOE_IDE.PictureBoxToolTip" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACIAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>PictureBoxToolTip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.Properties.Resources" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAUAAABARACAAAQQAApEAAAAQCAHgAAAAACgEAgAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LED_Board_Access.Properties.Settings" Collapsed="true">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="LED_Board_Access.IDocument" Collapsed="true">
+    <Position X="3" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAhAA=</HashCode>
+      <FileName>IDocument.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LED_Board_Access.LB_Tools_Interface" Collapsed="true">
+    <Position X="4.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAgAACAAAACAAAQAAAAAAEAACgAAAAAAUAAAAAA=</HashCode>
+      <FileName>LB_Tools_Interface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
