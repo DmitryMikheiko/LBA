@@ -20,7 +20,7 @@ namespace LED_Board_Access
 
         public const string Extension = ".lbt";
         public const string ExtensionName = "LED Board Theme";
-        public Project project;
+        private Project project;
 
         public List<LB_Tools_Interface> Tools;
 
@@ -51,6 +51,12 @@ namespace LED_Board_Access
         public Theme()
         {
             Tools = new List<LB_Tools_Interface>();
+            this.project = null;
+        }
+        public Theme(Project project)
+        {
+            Tools = new List<LB_Tools_Interface>();
+            this.project = project;
         }
         public void AddTool(LB_Tools_Interface tool)
         {
@@ -105,6 +111,14 @@ namespace LED_Board_Access
         public ThemeCreator GetThemeCreator()
         {
             return themeCreator;
+        }
+        public Project GetProject()
+        {
+            return project;
+        }
+        public void SetProject(Project project)
+        {
+            this.project = project;
         }
     }
 }

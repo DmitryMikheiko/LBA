@@ -51,9 +51,8 @@ namespace LED_Board_Access
 
         public ThemeCreator (Project project)
         {
-            theme = new Theme();
+            theme = new Theme(project);
             theme.Name = "NewTheme";
-            theme.project = project;
             ThemeCreatorInit();
         }
         public ThemeCreator(Theme theme)
@@ -64,7 +63,7 @@ namespace LED_Board_Access
             }
             else
             {
-               this.theme = new Theme();
+               this.theme = new Theme(null);
                this.theme.Name = "NewTheme";
             }
             ThemeCreatorInit();
@@ -73,9 +72,9 @@ namespace LED_Board_Access
         {
             Control = new ThemeCreatorControl();
             tabPage = new TabPage();
-            if (theme.project != null && !theme.project.GetBoardSize().Equals(new Size(0,0)))
+            if (theme.GetProject() != null && !theme.GetProject().GetBoardSize().Equals(new Size(0,0)))
             {
-                BoardSize = theme.project.GetBoardSize();
+                BoardSize = theme.GetProject().GetBoardSize();
             }
             Control.PictureBox.Size = new Size(BoardSize.Width * (DotSize + DotSpace) - DotSpace + MatrixPosition.X * 2,
                                                 BoardSize.Height * (DotSize + DotSpace) - DotSpace + MatrixPosition.Y * 2);
@@ -244,7 +243,7 @@ namespace LED_Board_Access
                 toolArea.Y = toolArea.Y * (DotSize + DotSpace) + MatrixPosition.Y - (DotSpace / 2);
                 g.DrawRectangle(pen3, toolArea);
             }
-            Thread.Sleep(10);
+            //Thread.Sleep(10);
         }
         private void Toolbox_Tool_SetActive(object sender)
         {

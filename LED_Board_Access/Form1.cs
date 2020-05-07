@@ -19,7 +19,7 @@ namespace LED_Board_Access
         private NewProjectDialog newProjectDialog;
         ProjectTreeBuilder projectTreeBuilder;
         LED_Board_Manager lb_manager;
-        public Form1()
+        public Form1(string path)
         {
             InitializeComponent();
             solution = new Solution();
@@ -29,6 +29,13 @@ namespace LED_Board_Access
             treeView_Context_Up.Click += new EventHandler(treeView_Context_Up_Click);
             treeView_Context_Down.Click += new EventHandler(treeView_Context_Down_Click);
             treeView_Context_Close.Click += new EventHandler(treeView_Context_Delete_Click);
+
+            if(path != "")
+            {
+                if(Path.GetExtension(path) == Project.Extension){
+                    LoadProject(path);
+                }
+            }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -143,10 +150,15 @@ namespace LED_Board_Access
 
         private void projectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(solution != null)
+            LoadProject(ShowOpenFileDialog(Project.ExtensionName, Project.Extension));
+        }
+        private void LoadProject(string path)
+        {
+            if (path == "") return;
+            if (solution != null)
             {
                 Project pr = solution.GetProject();
-                if(pr!=null)
+                if (pr != null)
                 {
                     if (MessageBox.Show("Do you want to close current project?", "", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
@@ -156,15 +168,13 @@ namespace LED_Board_Access
                     else return;
                 }
             }
-            string path = ShowOpenFileDialog(Project.ExtensionName, Project.Extension);
-            if (path == "") return;
             foreach (Project pr in solution.GetProjects()) // seach the same opened project
             {
-               if( solution.GetItemDocument(pr).GetPath() == path)
-               {
-                   MessageBox.Show("The project '" + pr.GetName() + "' is already opened", "Error", MessageBoxButtons.OK);
-                   return;
-               }
+                if (solution.GetItemDocument(pr).GetPath() == path)
+                {
+                    MessageBox.Show("The project '" + pr.GetName() + "' is already opened", "Error", MessageBoxButtons.OK);
+                    return;
+                }
             }
             Project project = (Project)solution.AddItem(path);
             if (project != null) LoadProjectFiles(project);
@@ -179,9 +189,14 @@ namespace LED_Board_Access
                 foreach (string directory in project.GetProjectDirectories())
                 {
                     file_path = project_directory + directory + file_name;
-                    if (solution.AddItem(file_path, project) != null)
+                    IDocument item = solution.AddItem(file_path, project);
+                    if (item == null) // !=
                     {
                         break;
+                    }
+                    if(item.GetExtension() == Theme.Extension)
+                    {
+                        ((Theme)item).SetProject(project);
                     }
                 }
             }
@@ -450,10 +465,13 @@ namespace LED_Board_Access
             solution.SaveAll();
             lb_manager = new LED_Board_Manager();
             lb_manager.Size = new Size(425,180);
-            
-            string ProjectFileName = solution.GetItemPath(solution.GetProject());
-            lb_manager.AddFile(ProjectFileName);
-            foreach (IDocument item in solution.GetProjectItems(solution.GetProject()))
+
+            Project project = solution.GetProject();
+            if (project == null) return;
+            string prject_file_path = solution.GetItemPath(project);
+            string project_folder_path = Path.GetDirectoryName(prject_file_path) + "\\";        
+            lb_manager.AddFile(prject_file_path);
+            foreach (IDocument item in solution.GetProjectItems(project))
             {
                 Document document = solution.GetItemDocument(item);
                 string path = document.GetPath();
@@ -465,32 +483,46 @@ namespace LED_Board_Access
                     {
                         string tool_res;
                         
-                            if(tool.GetType() == typeof(LB_Tools_Text))
+                        if(tool.GetType() == typeof(LB_Tools_Text))
+                        {
+                            LB_Tools_Text tool_text = tool as LB_Tools_Text;
+                            tool_res = project_folder_path + Project.AnimationsDirectory + "LB_Tools_Text_" + tool_text.Text_Name + ".bma";
+                            tool_text.SetLBResourcePath(tool_res);
+                            AnimationConverter animationConverter = new AnimationConverter(tool_text.GetBitmap());
+                            if (animationConverter.Encode(tool_res, 0, 0, AnimationConverter.ColorOrder.RGB, AnimationConverter.PixelOrder.VS_TR, AnimationConverter.DataType.Default))
                             {
-                                LB_Tools_Text tool_text = tool as LB_Tools_Text;
-                                tool_res = Path.GetDirectoryName(ProjectFileName) + "\\" + "LB_Tools_Text_" + tool_text.Text_Name + ".bma";
-                                tool_text.SetLBResourcePath(tool_res);
-                                AnimationConverter animationConverter = new AnimationConverter(tool_text.GetBitmap());
-                                if (animationConverter.Encode(tool_res, 0, 0, AnimationConverter.ColorOrder.RGB, AnimationConverter.PixelOrder.VS_TR, AnimationConverter.DataType.Default))
-                                {
-                                    lb_manager.AddFile(tool_res);
-                                }
+                                lb_manager.AddFile(tool_res);
                             }
-                            else if(tool.GetType() == typeof(LB_Tools_RunningText))
+                        }
+                        else if(tool.GetType() == typeof(LB_Tools_RunningText))
+                        {
+                            LB_Tools_RunningText tool_rtext = tool as LB_Tools_RunningText;
+                            tool_res = project_folder_path + Project.AnimationsDirectory + "LB_Tools_Text_" + tool_rtext.Text_Name + ".bma";
+                            CloseTabIfOpened(theme);
+                            if(tool_rtext.SaveAsBMA(tool_res))
                             {
-                                LB_Tools_RunningText tool_rtext = tool as LB_Tools_RunningText;
-                                tool_res = Path.GetDirectoryName(ProjectFileName) + "\\" + "LB_Tools_Text_" + tool_rtext.Text_Name + ".bma";
-                                CloseTabIfOpened(theme);
-                                if( tool_rtext.SaveAsBMA(tool_res))
-                               {
-                                   lb_manager.AddFile(tool_res);
-                               }
+                                lb_manager.AddFile(tool_res);
                             }
-                            else
+                        }
+                        else if(tool.GetType() == typeof(LB_Tools_Animation))
+                        {
+                            string animations_folder = project_folder_path + Project.AnimationsDirectory;
+                            if (!Directory.Exists(animations_folder))
                             {
-                                tool_res = tool.GetLBResourcePath();
-                                if (tool_res != "") lb_manager.AddFile(tool_res);
+                                Directory.CreateDirectory(animations_folder);
                             }
+                            string animation_file_path = tool.GetLBResourcePath();
+                            if (animations_folder != Path.GetDirectoryName(animation_file_path)){
+                                File.Copy(animation_file_path, animations_folder + Path.GetFileName(animation_file_path), true);
+                                animation_file_path = animations_folder + Path.GetFileName(animation_file_path);
+                                lb_manager.AddFile(animation_file_path);
+                            }
+                        }
+                        else
+                        {
+                            tool_res = tool.GetLBResourcePath();
+                            if (tool_res != "") lb_manager.AddFile(tool_res);
+                        }
                         
                     }
                 }

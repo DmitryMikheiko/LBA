@@ -140,6 +140,8 @@ namespace LED_Board_Access
             ActiveFrame.Y=0;
             ActiveFrame.Size = new Size(24, 8);
             bitmap = new Bitmap(1, 8);
+            DateTime dt = DateTime.Now;
+            Text_Name = String.Format("{0:d2}{1:d2}{2:d4}_{3:d2}{4:d2}{5:d2}", dt.Day, dt.Month, dt.Year, dt.Hour, dt.Minute, dt.Second);
         }
         public Size GetSize()
         {

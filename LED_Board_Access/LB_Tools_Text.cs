@@ -7,6 +7,7 @@ using System.Drawing.Text;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Globalization;
 
 namespace LED_Board_Access
 {
@@ -119,6 +120,8 @@ namespace LED_Board_Access
             BackColor = Color.Black;
             stbc = new StringToBitmapConverter();
             textRenderingHint = TextRenderingHint.SingleBitPerPixelGridFit;
+            DateTime dt = DateTime.Now;
+            Text_Name = String.Format("{0:d2}{1:d2}{2:d4}_{3:d2}{4:d2}{5:d2}", dt.Day, dt.Month, dt.Year, dt.Hour, dt.Minute, dt.Second);
         }
         public Size GetSize()
         {

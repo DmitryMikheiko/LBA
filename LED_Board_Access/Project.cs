@@ -25,8 +25,8 @@ namespace LED_Board_Access
             LSB_24x24,
             LSB_53x28
         }
-        private BoardType boardType;
-        private Size boardSize;
+        public BoardType boardType;
+        public Size boardSize;
 
      
         public string ProjectName;

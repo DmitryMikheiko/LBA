@@ -365,10 +365,10 @@ namespace LED_Board_Access
             }
             else return "";
         }
-        private void SaveObjectToFile(object obj,string path)
+        private void SaveObjectToFile(object obj, string path)
         {
             if (path == "") return;
-            string serialized = JsonConvert.SerializeObject(obj);
+            string serialized = JsonConvert.SerializeObject(obj, Formatting.Indented);
           
             System.IO.File.WriteAllText(path, serialized);
         }
@@ -380,7 +380,7 @@ namespace LED_Board_Access
                 switch(Path.GetExtension(path))
                 {
                     case Theme.Extension:
-                        return JsonConvert.DeserializeObject<Theme>(value,new ToolsConverter());
+                        return JsonConvert.DeserializeObject<Theme>(value, new ToolsConverter());
                         
                     case Project.Extension:
                         return JsonConvert.DeserializeObject<Project>(value);

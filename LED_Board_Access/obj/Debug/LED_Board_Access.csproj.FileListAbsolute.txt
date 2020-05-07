@@ -41,3 +41,4 @@ F:\Projects\Soft\C#\LED_Board_Access\LED_Board_Access\obj\Debug\LED_Board_Access
 F:\Projects\Soft\C#\LED_Board_Access\LED_Board_Access\obj\Debug\LED_Board_Access.csproj.CopyComplete
 F:\Projects\Soft\C#\LED_Board_Access\LED_Board_Access\obj\Debug\LED_Board_Access.exe
 F:\Projects\Soft\C#\LED_Board_Access\LED_Board_Access\obj\Debug\LED_Board_Access.pdb
+F:\Projects\Soft\C#\LED_Board_Access\LED_Board_Access\bin\Debug\Newtonsoft.Json.xml
